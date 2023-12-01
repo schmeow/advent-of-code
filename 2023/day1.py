@@ -12,6 +12,8 @@ for case in range(1000):
 
 print(sum) """
 
+# Final
+
 sum = 0
 numlist = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 for case in range(1000):
