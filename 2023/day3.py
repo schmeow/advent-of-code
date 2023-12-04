@@ -20,17 +20,25 @@ for l, line in enumerate(full):
             continue
         else:
             syms.append((l, c))
-sum = 0
-
+# Part 1
+""" sum = 0
 for num in nums:
     for sym in syms:
         if sym[0] >= num[1] - 1 and sym[0] <= num[1] + 1:
             if sym[1] >= num[2] - 1 and sym[1] <= num[2] + len(num[0]):
                 sum += int(num[0])
+print(sum) """
+
+sum = 0
+for sym in syms:
+    count = 0
+    ratio = 1
+    for num in nums:
+        if sym[0] >= num[1] - 1 and sym[0] <= num[1] + 1:
+            if sym[1] >= num[2] - 1 and sym[1] <= num[2] + len(num[0]):
+                count+= 1
+                ratio *= int(num[0])
+    if count >= 2:
+        sum += ratio
 print(sum)
 
-# get indexes (first index) and rows (case num) of numbers 
-# get indexes and rows of symbols
-# if index of symbol is in the range of one behind index of num to length of num ahead of index of num 
-# AND row of symbol is in the range of one behind to one ahead of row of rum
-# then num is added to sum
